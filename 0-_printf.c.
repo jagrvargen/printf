@@ -1,0 +1,14 @@
+#ifndef HOLBERTON
+#define HOLBERTON
+
+typedef struct specs
+{
+	char *c;
+	void (*print_f)(va_list);
+} spec_list;
+
+int _putchar(char c);
+
+int _printf(const char *format, ...);
+
+#endif
