@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _putchar_c - Prints a single char
+ * c_print - Prints a single char
  *
  * @ap: A pointer to a variadic argument
  *
