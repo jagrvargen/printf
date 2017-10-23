@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+ * struct specs - a struct for format specifiers and their print functions
+ * @c: A pointer to a char
+ * @print_f: A pointer to a function which prints a va_list arg.
+ */
 typedef struct specs
 {
 	char *c;
