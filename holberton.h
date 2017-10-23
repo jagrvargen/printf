@@ -13,8 +13,10 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
-int _putchar_c(va_list ap);
+int c_print(va_list ap);
 
-int _putchar_s(va_list ap);
+int s_print(va_list ap);
+
+int d_print(va_list ap);
 
 #endif

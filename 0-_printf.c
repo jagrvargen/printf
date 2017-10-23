@@ -1,8 +1,5 @@
 #include "holberton.h"
 
-int _putchar_c(va_list ap);
-int _putchar_s(va_list ap);
-
 /**
  * _printf - Produces output according to a format.
  *
@@ -17,8 +14,8 @@ int _printf(const char *format, ...)
 	int count; /* Number of characters printed except '\0'*/
 	spec_list specs[] = /* A struct with sifts for functions */
 		{
-			{"c", _putchar_c},
-			{"s", _putchar_s},
+			{"c", c_print},
+			{"s", s_print},
 			{NULL, NULL}
 		};
 
@@ -55,21 +52,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (count + i); /* Return the number of chars printed except '\0'*/
-}
-
-int _putchar_c(va_list ap) /* Function to write single char */
-{
-	_putchar(va_arg(ap, int));
-	return (1);
-}
-
-int _putchar_s(va_list ap) /* Function to write string */
-{
-	int i;
-	char *s;
-
-	s = va_arg(ap, char *);
-	for (i = 0; s[i] != '\0'; i++)
-		_putchar(s[i]);
-	return (i - 1);
 }
