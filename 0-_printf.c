@@ -18,21 +18,21 @@ int _printf(const char *format, ...)
 			{"\0", NULL}
 		};
 
+	if (format == NULL)
+		return (-1);
 	va_start(ap, format);
 	i = 0;
 	count = 0;
-	if (format == NULL)
-		return (-1);
 	while (format[i] != '\0') /* Iterate through format */
 	{
 		if (format[i] == '%') /* If loop finds %, */
 		{
 			i++;
+			if (format[i] == '\0')
+				return (-1);
 			j = 0;
-			/* Look through specs for matching char */
 			while (format[i] != *(specs[j]).c && *(specs[j]).c != '\0')
 				j++;
-			/* If match found, call print function */
 			if (*(specs[j]).c != '\0')
 			{
 				count += specs[j].print_f(ap);
@@ -41,9 +41,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
-				if (format[i] == '\0')
-					return (-1);
-				else if (format[i] != '%')
+				if (format[i] != '%')
 				{
 					_putchar(format[i]);
 					count += 1;

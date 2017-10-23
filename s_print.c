@@ -17,5 +17,5 @@ int s_print(va_list ap) /* Function to write string */
 		s = "(null)";
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
-	return (i - 1);
+	return (i);
 }
