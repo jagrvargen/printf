@@ -9,6 +9,9 @@
  */
 int c_print(va_list ap) /* Function to write single char */
 {
-        _putchar(va_arg(ap, int));
+	if (ap == NULL)
+		_putchar(' ');
+	else
+		_putchar(va_arg(ap, int));
         return (1);
 }
