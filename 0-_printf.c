@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i, j;
-	int count; /* Number of characters printed except '\0'*/
+	int i, j, count = 0;
 	spec_list specs[] = /* A struct with sifts for functions */
 		{
 			{"c", c_print},
@@ -20,13 +19,10 @@ int _printf(const char *format, ...)
 		};
 
 	va_start(ap, format);
-	i = 0;
-	count = 0;
 	while (format[i] != '\0') /* Iterate through format */
 	{
-		if (format[i] == '%') /* If loop finds %, */
+		if (format[i++] == '%') /* If loop finds %, */
 		{
-			i++;          /* If double %%, print % */
 			if (format[i] == '%')
 			{
 				_putchar('%');
@@ -47,8 +43,7 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		_putchar(format[i]);
-		i++;
+		_putchar(format[i++]);
 	}
 	va_end(ap);
 	return (count + i); /* Return the number of chars printed except '\0'*/
