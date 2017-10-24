@@ -1,8 +1,5 @@
 #include "holberton.h"
-
-int _putchar_c(va_list ap);
-int _putchar_s(va_list ap);
-
+#include <stdio.h>
 /**
  * _printf - Produces output according to a format.
  *
@@ -13,15 +10,16 @@ int _putchar_s(va_list ap);
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i, j;
-	int count; /* Number of characters printed except '\0'*/
+	int i, j, count;
 	spec_list specs[] = /* A struct with sifts for functions */
 		{
-			{"c", _putchar_c},
-			{"s", _putchar_s},
-			{NULL, NULL}
+			{"c", c_print},
+			{"s", s_print},
+			{"\0", NULL}
 		};
 
+	if (format == NULL)
+		return (-1);
 	va_start(ap, format);
 	i = 0;
 	count = 0;
@@ -29,47 +27,35 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%') /* If loop finds %, */
 		{
-			i++;          /* If double %%, print % */
-			if (format[i] == '%')
+			i++;
+			if (format[i] == '\0')
+				return (-1);
+			j = 0;
+			while (format[i] != *(specs[j]).c && *(specs[j]).c != '\0')
+				j++;
+			if (*(specs[j]).c != '\0')
 			{
-				_putchar('%');
-				count += 1;
+				count += specs[j].print_f(ap);
 				i++;
 			}
 			else
 			{
-				j = 0;
-				/* Look through specs for matching char */
-				while (format[i] != *(specs[j]).c)
-					j++;
-				/* If match found, call print function */
-				if (specs[j].c != NULL)
+				_putchar('%');
+				if (format[i] != '%')
 				{
-					count += specs[j].print_f(ap);
-					i++;
+					_putchar(format[i]);
+					count += 1;
 				}
+				count += 1;
+				i++;
 			}
 		}
-		_putchar(format[i]);
-		i++;
+		else
+		{
+			_putchar(format[i++]);
+			count++;
+		}
 	}
 	va_end(ap);
-	return (count + i); /* Return the number of chars printed except '\0'*/
-}
-
-int _putchar_c(va_list ap) /* Function to write single char */
-{
-	_putchar(va_arg(ap, int));
-	return (1);
-}
-
-int _putchar_s(va_list ap) /* Function to write string */
-{
-	int i;
-	char *s;
-
-	s = va_arg(ap, char *);
-	for (i = 0; s[i] != '\0'; i++)
-		_putchar(s[i]);
-	return (i - 1);
+	return (count); /* Return the number of chars printed except '\0'*/
 }
