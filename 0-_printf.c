@@ -51,8 +51,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
+		{
 			_putchar(format[i++]);
+			count++;
+		}
 	}
 	va_end(ap);
-	return (count + i); /* Return the number of chars printed except '\0'*/
+	return (count); /* Return the number of chars printed except '\0'*/
 }
