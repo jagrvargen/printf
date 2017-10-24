@@ -2,7 +2,7 @@
 #define HOLBERTON
 #include <stdlib.h>
 #include <stdarg.h>
-
+#include <stdio.h>
 /**
  * struct specs - a struct for format specifiers and their print functions
  * @c: A pointer to a char
@@ -24,6 +24,10 @@ int s_print(va_list ap);
 
 int d_print(va_list ap);
 
+int r_string(va_list ap);
+
 int specifier(const char *format, va_list ap, int i);
+
+int _strlen(char *s);
 
 #endif
