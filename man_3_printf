@@ -1,0 +1,23 @@
+.TH Printf 1 "2017-23-10" "Printf man page"
+.SH NAME
+Printf \- a function that will produce output according to format
+.SH DESCRIPTION
+A control parameter used by a class of functions in the string-processing libraries of vaious programming languages
+.SH SYNOPSIS
+#include "holberton.h"
+.B Printf
+
+.SH OPTIONS
+.IP -o
+unsigned int in octal
+.IP -d
+int as signed decimal number *used different when used as input specifier)
+.IP -i
+int as signed decimal number *used different when used as input specifier)
+.IP -%
+prints a literal % character
+.TP
+.BR \-
+
+.SH AUTHOR
+Jesse Hedden, Darnell Garvey
