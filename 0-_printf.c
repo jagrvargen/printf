@@ -57,6 +57,7 @@ int specifier(const char *format, va_list ap, int i)
 		{"s", s_print},
 		{"d", d_print},
 		{"i", d_print},
+		{"r", r_print},
 		{"\0", NULL}
 	};
 
