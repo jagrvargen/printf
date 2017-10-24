@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 			if (*(specs[j]).c != '\0')
 			{
 				count += specs[j].print_f(ap);
+				if (count = -1)
+					return (-1);
 				i++;
 			}
 			else
