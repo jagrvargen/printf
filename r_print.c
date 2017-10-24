@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * r_string - Function which reverses a string.
+ * r_print - Function which reverses a string.
  *
  * @ap: A pointer to a variadic argument.
  *
@@ -32,6 +32,13 @@ int r_print(va_list ap)
 	return (len);
 }
 
+/**
+ * _strlen - Checks the length of a string.
+ *
+ * @s: A pointer to a string.
+ *
+ * Return: An integer value.
+ */
 int _strlen(char *s)
 {
 	int len;
