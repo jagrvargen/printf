@@ -24,4 +24,6 @@ int s_print(va_list ap);
 
 int d_print(va_list ap);
 
+int specifier(const char *format, va_list ap, int i);
+
 #endif
