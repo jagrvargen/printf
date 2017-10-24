@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
 /**
  * struct specs - a struct for format specifiers and their print functions
  * @c: A pointer to a char
