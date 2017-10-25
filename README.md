@@ -26,3 +26,6 @@ va_end (man 3 va_end)
 va_copy (man 3 va_copy)
 va_arg (man 3 va_arg)
 Note that we will not provide the _putchar function for this project
+EXAMPLE
+Print the date oct 25, 2017
+_printf("oct %d, %d,\n" 25, 2017);
