@@ -58,6 +58,7 @@ int specifier(const char *format, va_list ap, int i)
 		{"d", d_print},
 		{"i", d_print},
 		{"r", r_print},
+		{"b", bin_print},
 		{"\0", NULL}
 	};
 
@@ -72,7 +73,6 @@ int specifier(const char *format, va_list ap, int i)
 		count += specs[j].print_f(ap);
 		if (count == -1)
 			return (-1);
-		i++;
 	}
 	else
 	{
@@ -83,7 +83,6 @@ int specifier(const char *format, va_list ap, int i)
 			count += 1;
 		}
 		count += 1;
-		i++;
 	}
 	return (count);
 }
