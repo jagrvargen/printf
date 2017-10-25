@@ -1,0 +1,48 @@
+.TH Printf 1 "2017-23-10" "Printf man page"
+.SH NAME
+Printf \- a function that will produce output according to format
+.SH DESCRIPTION
+A control parameter used by a class of functions in the string-processing libraries of vaious programming languages
+.SH SYNOPSIS
+#include "holberton.h"
+.SH Printf Format
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives. The argument must corespond properly with the conversion specifier. 
+.SH Return value
+Upon successful return the function returns the number of characters printed excluding the null byte.
+If output error occures a negative value is returned.
+.SH OPTIONS
+.IP -%o
+unsigned int in octal
+.IP -%d
+int as signed decimal number *used different when used as input specifier
+.IP -%i
+int as signed decimal number *used different when used as input specifier
+.IP -%
+prints a literal % character
+.IP -%c
+char single character
+.IP -%e
+float or double exponential format
+.IP -%s
+array of char sequence of characters
+.IP -%u
+int unsigned decimal
+.IP -%r
+prints a string in reverse
+.SH EXAMPLES
+#include "holberton.h"
+.LP
+"Print the number decimal"
+.LP
+_printf("%d\\n", 1000)
+.LP
+.SH EXAMPLE2
+"Print the date oct 25, 2017"
+.LP
+_printf("oct %d, %d,\\n" 25, 2017) 
+
+.SH BUGS
+No known bugs at this time.
+
+.SH AUTHOR
+Jesse Hedden, Darnell Garvey
