@@ -29,6 +29,8 @@ int r_print(va_list ap);
 
 int specifier(const char *format, va_list ap, int i);
 
+int bin_print(va_list ap);
+
 int _strlen(char *s);
 
 #endif
