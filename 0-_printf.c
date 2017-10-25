@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * _printf - Produces output according to a format.
  *
@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (nullcheck == -1)
 				return (-1);
-			else
-				count += nullcheck;
+			count += nullcheck;
 		}
 		else
 		{
@@ -40,6 +39,15 @@ int _printf(const char *format, ...)
 	return (count); /* Return the number of chars printed except '\0'*/
 }
 
+/**
+ * specifier - function that processes modification of printf specifier.
+ *
+ * @format: A pointer to a constant string.
+ * @ap: A pointer to a variadic argument.
+ * @i: An integer iterator.
+ *
+ * Return: An integer value.
+ */
 int specifier(const char *format, va_list ap, int i)
 {
 	int j, count;
