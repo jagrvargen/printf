@@ -1,31 +1,57 @@
- _printf - This project presented by Jesse Hedden and Darnell Garvey will print output with the output specifiers c, s, and %. using our own Printf!!!!!!!
+# Printf
+A recreation of the functionality of the C standard library function printf.
 
+### Environment
+This project was written and tested on the Ubuntu 14.04 operating system.
 
-Prototype int _printf(const char *format, ...);
+### Repository Contents
 
-Requirements
+|   **File** | **Description** |
+| -------- | ----------------- |
+|  \_printf.c		       |	Main function for the printf string formatter |
+|  \_putchar.c 		       | 	An implementation of the C standard library function putchar.c |
+|   c\_print 		       |	Function to print a single ASCII character |
+|    d\_print |		       Function to print an integer |
+|    holberton.h | Header files |
+|  r\_print.c | A function to print a string in reverse |
+|  s\_print.c | A function to print a string |
 
-Allowed editors: vi, vim, emacs
-All your files will be compiled on Ubuntu 14.04 LTS
-Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
-All your files should end with a new line
-A README.md file, at the root of the folder of the project is mandatory
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-You are not allowed to use global variables
-No more than 5 functions per file
-In the following examples, the main.c files are showed as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one showed in the examples
-The prototypes of all your functions should be included in your header file called holberton.h
-Don’t forget to push your header file
-All your header files should be include guarded
-Authorized functions and macros:
-write (man 2 write)
-malloc (man 3 malloc)
-free (man 3 free)
-va_start (man 3 va_start)
-va_end (man 3 va_end)
-va_copy (man 3 va_copy)
-va_arg (man 3 va_arg)
-Note that we will not provide the _putchar function for this project
-EXAMPLE
-Print the date oct 25, 2017
-_printf("oct %d, %d,\n" 25, 2017);
+### Function Descriptions
+|   **Function** |	**Description**	|
+| -------------- | -------------------- |
+| int. \_printf(const char \*format, ...) | Print a formatted string |
+| \_putchar(char c) | Write a char to stdout |
+| int c\_print(va\_list ap) | Print a single char within the format string |
+| int d\_print(va\_list ap)| Print an integer within the format string |
+| int r\_print(va\_list ap) | Print a string in reverse within the format string |
+| int specifier(const char \*format, va\_list ap, int i) | Process the modification declared by specifier |
+| int \_strlen(char *s) | Returns the length of a string |
+| int s\_print(va\_list ap) | Prints a string within the format string |
+
+### How to Install
+[Clone the repo](https://github.com/jagrvargen/printf.git)
+
+### Compilation
+` $ gcc -Wall -Wextra -Werror -pedantic -Wno-format holberton.h *.c -o print `
+
+#### Example Code
+```
+int main(void)
+{
+		_printf("This is an example %s", "sentence");
+			      return (0);
+}
+```
+
+### Format Specifiers
+| **Specifier** | **Type** |
+| -------------- | --------- |
+| %b | binary |
+|    %c | char |
+| %d | int |
+| %r | reversed string |
+| %s | string |
+
+### Authors
+* [**Jesse Hedden**](https://github.com/jagrvargen)
+* [**Darnell Garvey**](https://github.com/tragic86)
